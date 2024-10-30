@@ -18,16 +18,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Create pom.xml if it doesn't exist
-        run: |
-          if [ ! -f pom.xml ]; then
-            echo '<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-            <modelVersion>4.0.0</modelVersion>
-            <groupId>com.example</groupId>
-            <artifactId>example</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            </project>' > pom.xml
-          fi
+      - name: Change directory to project root
+        run: cd /home/runner/work/Lab-01-git/Lab-01-git
 
       - name: Build with Maven
         run: mvn clean install
