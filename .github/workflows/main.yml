@@ -18,9 +18,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Change directory to project root
-        run: cd /home/runner/work/Lab-01-git/Lab-01-git
-
       - name: Build with Maven
         run: echo "Simulation build"
 
